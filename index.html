@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Hotel i Restauracja Biały - Wałbrzych | szkic nowej strony</title>
+<meta name="description" content="Hotel i Restauracja Biały w Wałbrzychu - ponad 120 miejsc noclegowych, restauracja, sala konferencyjna, wesela i imprezy okolicznościowe. Szkic nowej strony.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap&subset=latin,latin-ext" rel="stylesheet">
+<style>
+:root{
+  --grafit:#191d23;
+  --grafit2:#232932;
+  --zloto:#b3894f;
+  --zloto2:#c9a063;
+  --krem:#faf8f5;
+  --krem2:#f1ece4;
+  --tekst:#1e232b;
+  --szary:#5d6570;
+  --linia:rgba(25,29,35,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+.duet>*,.karty>*,.siatka>*,.galeria>*{min-width:0}
+body{margin:0;font-family:Karla,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--tekst);background:var(--krem);line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"EB Garamond",Georgia,serif;font-weight:600;line-height:1.14;margin:0 0 .5em;letter-spacing:.2px}
+h1{font-size:clamp(2.1rem,5.6vw,4rem)}
+h2{font-size:clamp(1.65rem,3.6vw,2.7rem)}
+h3{font-size:clamp(1.15rem,2vw,1.42rem)}
+p{margin:0 0 1em}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+section{padding:clamp(52px,7vw,96px) 0}
+.nadtyt{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--zloto);font-weight:700;margin-bottom:.7em}
+
+/* pasek szkicu */
+.szkic{background:#7a2f1c;color:#fff;font-size:.82rem;padding:9px 14px;text-align:center;letter-spacing:.02em}
+.szkic b{color:#ffd9a8}
+
+/* header */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(25,29,35,.95);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;gap:22px;min-height:66px}
+.logo{font-family:"EB Garamond",serif;font-size:1.42rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:.04em;white-space:nowrap}
+.logo span{color:var(--zloto2)}
+.nav nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+.nav nav a{color:#cfd4db!important;text-decoration:none;font-size:.9rem;font-weight:500;position:relative;padding:6px 0;transition:color .2s}
+.nav nav a:hover{color:#fff!important}
+.nav nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--zloto2);transition:right .3s ease}
+.nav nav a:hover::after{right:0}
+.tel-top{background:var(--zloto);color:#fff!important;padding:9px 18px;border-radius:2px;font-weight:700;font-size:.9rem;text-decoration:none;white-space:nowrap}
+.tel-top:hover{background:#9d7642}
+@media(max-width:940px){.nav nav{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:min(78vh,620px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--grafit)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,18,22,.34) 0%,rgba(15,18,22,.52) 45%,rgba(15,18,22,.86) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:clamp(40px,7vw,84px) 0 clamp(36px,5vw,64px)}
+.hero h1{color:#fff;max-width:17ch;margin-bottom:.34em}
+.hero h1 em{font-style:normal;color:var(--zloto2)}
+.hero p.lead{font-size:clamp(1rem,1.65vw,1.18rem);max-width:56ch;color:#e6e8ec;margin-bottom:1.6em}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 26px;border-radius:2px;font-weight:700;text-decoration:none;font-size:.95rem;letter-spacing:.01em;transition:.2s}
+.btn-z{background:var(--zloto);color:#fff}
+.btn-z:hover{background:#9d7642}
+.btn-o{border:1.5px solid rgba(255,255,255,.62);color:#fff}
+.btn-o:hover{background:#fff;color:var(--grafit)}
+
+/* pasek atutow */
+.atuty{background:var(--grafit2);color:#fff;padding:0}
+.atuty .siatka{display:grid;grid-template-columns:repeat(4,1fr)}
+.atuty .a{padding:30px 22px;border-left:1px solid rgba(255,255,255,.09)}
+.atuty .a:first-child{border-left:0}
+.atuty b{display:block;font-family:"EB Garamond",serif;font-size:2.05rem;color:var(--zloto2);line-height:1}
+.atuty span{font-size:.88rem;color:#b9c0c9;display:block;margin-top:6px}
+@media(max-width:820px){.atuty .siatka{grid-template-columns:repeat(2,1fr)}.atuty .a:nth-child(3){border-left:0}.atuty .a:nth-child(n+3){border-top:1px solid rgba(255,255,255,.09)}}
+
+/* uklady */
+.duet{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,58px);align-items:center}
+.duet.odwr{grid-template-columns:.95fr 1.05fr}
+.duet.odwr .txt{order:2}
+@media(max-width:860px){.duet,.duet.odwr{grid-template-columns:1fr}.duet.odwr .txt{order:0}}
+.kadr{border-radius:3px;overflow:hidden;box-shadow:0 18px 44px rgba(25,29,35,.16)}
+.kadr img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+ul.lista{list-style:none;padding:0;margin:0 0 1.4em}
+ul.lista li{padding:9px 0 9px 28px;border-bottom:1px solid var(--linia);position:relative;font-size:.97rem}
+ul.lista li::before{content:"";position:absolute;left:3px;top:17px;width:9px;height:9px;border:2px solid var(--zloto);border-radius:50%}
+
+/* pokoje */
+.pokoje{background:var(--krem2)}
+.karty{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:860px){.karty{grid-template-columns:1fr}}
+.karta{background:#fff;border-radius:3px;overflow:hidden;box-shadow:0 10px 28px rgba(25,29,35,.09);display:flex;flex-direction:column}
+.karta img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.karta .tresc{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.karta h3{margin-bottom:.35em}
+.karta .cena{font-family:"EB Garamond",serif;font-size:1.85rem;color:var(--zloto);font-weight:700;line-height:1;margin:auto 0 2px}
+.karta .cena small{font-family:Karla,sans-serif;font-size:.82rem;color:var(--szary);font-weight:500;display:block;margin-top:5px}
+
+/* ciemna sekcja */
+.ciemna{background:var(--grafit);color:#fff}
+.ciemna h2{color:#fff}
+.ciemna .nadtyt{color:var(--zloto2)}
+.ciemna p{color:#ccd2da}
+.ciemna ul.lista li{border-bottom-color:rgba(255,255,255,.12)}
+
+/* galeria */
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.galeria a:nth-child(1){grid-column:span 2;grid-row:span 2}
+.galeria a:nth-child(1) img{aspect-ratio:1/1;height:100%}
+@media(max-width:760px){.galeria{grid-template-columns:repeat(2,1fr)}.galeria a:nth-child(1){grid-column:span 2;grid-row:auto}}
+
+/* okolica */
+.okolica .siatka{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.okolica .siatka{grid-template-columns:1fr}}
+.ok-k{background:#fff;border:1px solid var(--linia);border-radius:3px;padding:24px}
+.ok-k b{display:block;font-family:"EB Garamond",serif;font-size:1.3rem;margin-bottom:.25em}
+.ok-k span{color:var(--szary);font-size:.92rem}
+.ok-k .czas{color:var(--zloto);font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;display:block;margin-top:10px}
+
+/* opinie */
+.opinie .siatka{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.opinie .siatka{grid-template-columns:1fr}}
+.op{background:#fff;border:1px dashed var(--linia);border-radius:3px;padding:24px;color:var(--szary);font-size:.93rem}
+.op .gw{color:var(--zloto);letter-spacing:3px;font-size:1.05rem}
+
+/* kontakt */
+.kontakt{background:var(--krem2)}
+.kontakt .siatka{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,52px)}
+@media(max-width:860px){.kontakt .siatka{grid-template-columns:1fr}}
+.dane p{margin:0 0 .9em}
+.dane a{color:var(--zloto);font-weight:700;text-decoration:none}
+.dane a:hover{text-decoration:underline}
+.form{background:#fff;padding:26px;border-radius:3px;box-shadow:0 10px 28px rgba(25,29,35,.08)}
+.form label{display:block;font-size:.82rem;font-weight:700;margin:0 0 5px;color:var(--szary)}
+.form input,.form select,.form textarea{width:100%;min-width:0;max-width:100%;padding:11px 13px;border:1px solid var(--linia);border-radius:2px;font:inherit;font-size:.94rem;margin-bottom:14px;background:#fff;color:var(--tekst)}
+.form .rz{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form .rz>div{min-width:0}
+.form button{width:100%;padding:14px;background:var(--zloto);color:#fff;border:0;border-radius:2px;font:inherit;font-weight:700;cursor:pointer}
+.form button:hover{background:#9d7642}
+.form .info{font-size:.78rem;color:var(--szary);margin:10px 0 0}
+
+/* stopka */
+footer{background:var(--grafit);color:#aeb6c0;padding:46px 0 92px;font-size:.9rem}
+footer .siatka{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+@media(max-width:760px){footer .siatka{grid-template-columns:1fr}}
+footer b{color:#fff;display:block;margin-bottom:.5em;font-weight:700}
+footer a{color:#aeb6c0;text-decoration:none}
+footer a:hover{color:#fff}
+.stopka-dol{border-top:1px solid rgba(255,255,255,.1);margin-top:32px;padding-top:20px;font-size:.82rem;color:#8b939e}
+
+/* pasek mobilny */
+.mobbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr;box-shadow:0 -4px 18px rgba(0,0,0,.2)}
+.mobbar a{padding:15px 8px;text-align:center;font-weight:700;text-decoration:none;font-size:.95rem}
+.mobbar a.l{background:#191d23!important;color:#ffffff!important}
+.mobbar a.r{background:#f7f4ed!important;color:#191d23!important;border-left:1px solid rgba(0,0,0,.15)}
+@media(max-width:860px){.mobbar{display:grid}footer{padding-bottom:92px}}
+</style>
+</head>
+<body>
+
+<div class="szkic"><b>SZKIC / DEMO</b> - propozycja nowej strony Hotelu Biały. Treści i zdjęcia pochodzą z obecnej strony hotelbialy.pl. Wersja robocza do oceny.</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#" class="logo">Hotel <span>Biały</span></a>
+    <nav>
+      <a href="#pokoje">Pokoje</a>
+      <a href="#restauracja">Restauracja</a>
+      <a href="#konferencje">Konferencje</a>
+      <a href="#wesela">Wesela</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="tel:+48748441805" class="tel-top">74 844 18 05</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img class="bg" src="img/hero.webp" alt="Sala restauracyjna Hotelu Biały w Wałbrzychu" width="1630" height="860">
+  <div class="wrap">
+    <p class="nadtyt" style="color:#d8bd8e">Wałbrzych · ul. Piotra Wysockiego 45</p>
+    <h1>Hotel, restauracja i miejsce na <em>Państwa uroczystość</em></h1>
+    <p class="lead">Ponad 120 miejsc noclegowych w zielonej dzielnicy Wałbrzycha. Klimatyzowana restauracja, sala konferencyjna i sala bankietowa - wszystko w jednym miejscu, 15 minut autobusem od Rynku, Szczawna-Zdroju i Zamku Książ.</p>
+    <div class="cta">
+      <a href="#pokoje" class="btn btn-z">Pokoje i ceny</a>
+      <a href="tel:+48748441805" class="btn btn-o">Zadzwoń: 74 844 18 05</a>
+    </div>
+  </div>
+</div>
+
+<div class="atuty">
+  <div class="wrap">
+    <div class="siatka">
+      <div class="a"><b>120+</b><span>miejsc noclegowych</span></div>
+      <div class="a"><b>160 zł</b><span>pokój od, ze śniadaniem</span></div>
+      <div class="a"><b>3</b><span>sale: konferencyjna, bankietowa, VIP</span></div>
+      <div class="a"><b>cały rok</b><span>wesela i imprezy okolicznościowe</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="hotel">
+  <div class="wrap duet">
+    <div class="txt">
+      <p class="nadtyt">O hotelu</p>
+      <h2>Spokojna, zielona część miasta - a komunikacja pod ręką</h2>
+      <p>Hotel Biały to obiekt usytuowany w jednej z najbardziej „zielonych" dzielnic Wałbrzycha. Z pobliskich przystanków co 15 minut można dojechać autobusem do wałbrzyskiego Rynku, Szczawna-Zdroju i Zamku Książ.</p>
+      <ul class="lista">
+        <li>Komfortowe pokoje z łazienkami - ponad 120 miejsc noclegowych</li>
+        <li>Przestronna, klimatyzowana restauracja z doskonałą kuchnią</li>
+        <li>Bar z aromatyczną kawą i wyśmienitymi drinkami</li>
+        <li>Nowoczesna, multimedialna sala konferencyjno-szkoleniowa</li>
+        <li>Kameralna sala bankietowa VIP</li>
+        <li>Letni taras oraz balkon przy restauracji</li>
+      </ul>
+      <a href="#kontakt" class="btn btn-z">Zapytaj o termin</a>
+    </div>
+    <div class="kadr"><img src="img/hol.webp" alt="Wnętrze Hotelu Biały" width="1024" height="683" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="pokoje" class="pokoje">
+  <div class="wrap">
+    <p class="nadtyt">Nocleg</p>
+    <h2>Pokoje i ceny</h2>
+    <p style="max-width:62ch;margin-bottom:2em">Wszystkie ceny zawierają śniadanie. Rezerwacja telefoniczna lub przez formularz - potwierdzenie wysyłamy tego samego dnia.</p>
+    <div class="karty">
+      <div class="karta">
+        <img src="img/pok1.webp" alt="Pokój jednoosobowy" width="1200" height="800" loading="lazy">
+        <div class="tresc">
+          <h3>Pokój jednoosobowy</h3>
+          <p style="color:var(--szary);font-size:.93rem">Własna łazienka, biurko, TV, bezpłatne Wi-Fi.</p>
+          <div class="cena">160 zł<small>za dobę, ze śniadaniem</small></div>
+        </div>
+      </div>
+      <div class="karta">
+        <img src="img/pok2.webp" alt="Pokój dwuosobowy" width="1200" height="800" loading="lazy">
+        <div class="tresc">
+          <h3>Pokój dwuosobowy</h3>
+          <p style="color:var(--szary);font-size:.93rem">Dwa łóżka pojedyncze lub małżeńskie, łazienka, TV, Wi-Fi.</p>
+          <div class="cena">250 zł<small>za dobę, ze śniadaniem</small></div>
+        </div>
+      </div>
+      <div class="karta">
+        <img src="img/pok3.webp" alt="Pokój trzyosobowy" width="1200" height="800" loading="lazy">
+        <div class="tresc">
+          <h3>Pokój trzyosobowy</h3>
+          <p style="color:var(--szary);font-size:.93rem">Dla rodziny lub ekipy w delegacji, łazienka, TV, Wi-Fi.</p>
+          <div class="cena">320 zł<small>za dobę, ze śniadaniem</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="restauracja">
+  <div class="wrap duet odwr">
+    <div class="kadr"><img src="img/restauracja.webp" alt="Restauracja Hotelu Biały" width="1024" height="683" loading="lazy"></div>
+    <div class="txt">
+      <p class="nadtyt">Restauracja</p>
+      <h2>Kuchnia, po którą przyjeżdża się osobno</h2>
+      <p>Przestronna, klimatyzowana sala, latem taras i balkon. W karcie klasyka, którą goście zamawiają najczęściej: schabowy tradycyjny panierowany, gulasz wieprzowy z kopytkami, burgery z frytkami stekowymi, deska mięs i serów na 500 g dla całego stołu, żurek i rosół z kluseczkami babuni.</p>
+      <ul class="lista">
+        <li>Śniadania dla gości hotelowych w cenie pokoju</li>
+        <li>Obiady i kolacje także dla gości z zewnątrz</li>
+        <li>Bar: kawa, drinki, spotkania po konferencji</li>
+        <li>Taras i balkon w sezonie letnim</li>
+      </ul>
+      <a href="#kontakt" class="btn btn-z">Zarezerwuj stolik</a>
+    </div>
+  </div>
+</section>
+
+<section id="konferencje" class="ciemna">
+  <div class="wrap duet">
+    <div class="txt">
+      <p class="nadtyt">Dla firm</p>
+      <h2>Konferencje, szkolenia i spotkania firmowe</h2>
+      <p>Dysponujemy salami pozwalającymi na organizację konferencji, szkolenia czy eventu firmowego. Sale wyposażamy w rzutnik, tablicę, nagłośnienie i ekran, a przerwy kawowe i obiad podajemy na miejscu - bez wyprowadzania grupy z budynku.</p>
+      <ul class="lista">
+        <li>Multimedialna sala konferencyjno-szkoleniowa</li>
+        <li>Ustawienie sali: teatralne, szkolne, podkowa, konferencyjne</li>
+        <li>Przerwy kawowe i lunch z własnej kuchni</li>
+        <li>Nocleg dla uczestników w tym samym budynku</li>
+        <li>Wyjazdy integracyjne i zwiedzanie regionu</li>
+      </ul>
+      <a href="#kontakt" class="btn btn-z">Poproś o wycenę konferencji</a>
+    </div>
+    <div class="kadr"><img src="img/sala-konf.webp" alt="Sala konferencyjna" width="1024" height="683" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="wesela">
+  <div class="wrap duet odwr">
+    <div class="kadr"><img src="img/wesele.webp" alt="Sala weselna Hotelu Biały" width="1400" height="739" loading="lazy"></div>
+    <div class="txt">
+      <p class="nadtyt">Wesela i przyjęcia</p>
+      <h2>Wesela organizujemy przez cały rok</h2>
+      <p>Ślub to szczególny moment. Zajmiemy się organizacją tak, żeby wszystko przebiegło zgodnie z Państwa wyobrażeniem: wynajmiemy limuzynę, pomożemy znaleźć zespół muzyczny, zadbamy o dekorację i oprawę sali. Goście nocują w tym samym miejscu, w którym odbywa się przyjęcie.</p>
+      <ul class="lista">
+        <li>Wesela, chrzciny, komunie, jubileusze, stypy</li>
+        <li>Kameralna sala bankietowa VIP na mniejsze uroczystości</li>
+        <li>Dekoracja, oprawa muzyczna, limuzyna - pomagamy zorganizować</li>
+        <li>Nocleg dla gości weselnych na miejscu</li>
+      </ul>
+      <a href="#kontakt" class="btn btn-z">Zapytaj o wolny termin</a>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" style="background:var(--krem2)">
+  <div class="wrap">
+    <p class="nadtyt">Galeria</p>
+    <h2>Zobacz, jak u nas jest</h2>
+    <div class="galeria" style="margin-top:1.8em">
+      <a href="img/wesele2.webp"><img src="img/wesele2.webp" alt="Sala na przyjęcie" width="1024" height="683" loading="lazy"></a>
+      <a href="img/bankiet.webp"><img src="img/bankiet.webp" alt="Sala bankietowa" width="1400" height="739" loading="lazy"></a>
+      <a href="img/sala-duza.webp"><img src="img/sala-duza.webp" alt="Sala konferencyjna, ustawienie teatralne" width="1024" height="683" loading="lazy"></a>
+      <a href="img/catering.webp"><img src="img/catering.webp" alt="Przerwa kawowa" width="1024" height="683" loading="lazy"></a>
+      <a href="img/wesele3.webp"><img src="img/wesele3.webp" alt="Dekoracja sali weselnej" width="1024" height="683" loading="lazy"></a>
+      <a href="img/sala-konf2.webp"><img src="img/sala-konf2.webp" alt="Sala szkoleniowa" width="960" height="720" loading="lazy"></a>
+      <a href="img/love.webp"><img src="img/love.webp" alt="Dekoracja LOVE" width="1000" height="667" loading="lazy"></a>
+    </div>
+    <p style="color:var(--szary);font-size:.88rem;margin-top:1.4em">W wersji finalnej galeria dzieli się na zakładki: Pokoje / Restauracja / Wesela / Konferencje, a zdjęcia powiększają się po kliknięciu.</p>
+  </div>
+</section>
+
+<section class="okolica">
+  <div class="wrap">
+    <p class="nadtyt">Okolica</p>
+    <h2>Co zwiedzić z Wałbrzycha</h2>
+    <div class="siatka" style="margin-top:1.8em">
+      <div class="ok-k"><b>Zamek Książ</b><span>Trzeci co do wielkości zamek w Polsce, tarasowe ogrody i palmiarnia.</span><span class="czas">Autobus co 15 minut</span></div>
+      <div class="ok-k"><b>Szczawno-Zdrój</b><span>Uzdrowiskowy park zdrojowy, pijalnia wód i deptak.</span><span class="czas">Autobus co 15 minut</span></div>
+      <div class="ok-k"><b>Rynek w Wałbrzychu</b><span>Odnowiona starówka, kawiarnie i Stara Kopalnia.</span><span class="czas">Autobus co 15 minut</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="opinie" style="background:var(--krem2)">
+  <div class="wrap">
+    <p class="nadtyt">Opinie</p>
+    <h2>Co mówią goście</h2>
+    <div class="siatka" style="margin-top:1.8em">
+      <div class="op"><div class="gw">★★★★★</div><p style="margin-top:.7em">W tym miejscu pojawią się prawdziwe opinie z wizytówki Google, pobierane automatycznie.</p></div>
+      <div class="op"><div class="gw">★★★★★</div><p style="margin-top:.7em">Opinie odświeżają się same - nie trzeba ich przepisywać ręcznie.</p></div>
+      <div class="op"><div class="gw">★★★★★</div><p style="margin-top:.7em">Ocena i liczba opinii pokazują się też w wynikach wyszukiwania Google.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="kontakt">
+  <div class="wrap">
+    <div class="siatka">
+      <div class="dane">
+        <p class="nadtyt">Kontakt</p>
+        <h2>Hotel i Restauracja Biały</h2>
+        <p>ul. Piotra Wysockiego 45<br>58-304 Wałbrzych</p>
+        <p><b>Recepcja:</b><br><a href="tel:+48748441805">74 844 18 05</a></p>
+        <p><b>Imprezy okolicznościowe i konferencje:</b><br><a href="tel:+48725660660">725 660 660</a></p>
+        <p><b>E-mail:</b><br><a href="mailto:hotel@hotelbialy.pl">hotel@hotelbialy.pl</a></p>
+        <p style="color:var(--szary);font-size:.88rem;margin-top:1.6em">W wersji finalnej w tym miejscu znajdzie się mapa dojazdu i godziny otwarcia restauracji.</p>
+      </div>
+      <div class="form">
+        <h3 style="margin-bottom:.8em">Zapytanie o rezerwację</h3>
+        <label for="im">Imię i nazwisko</label>
+        <input id="im" type="text" placeholder="Jan Kowalski">
+        <label for="em">Adres e-mail</label>
+        <input id="em" type="email" placeholder="jan@przyklad.pl">
+        <div class="rz">
+          <div><label for="d1">Przyjazd</label><input id="d1" type="date"></div>
+          <div><label for="d2">Wyjazd</label><input id="d2" type="date"></div>
+        </div>
+        <label for="rp">Rodzaj pokoju</label>
+        <select id="rp"><option>jednoosobowy - 160 zł</option><option>dwuosobowy - 250 zł</option><option>trzyosobowy - 320 zł</option><option>zapytanie o salę / wesele / konferencję</option></select>
+        <label for="tr">Treść wiadomości</label>
+        <textarea id="tr" rows="3" placeholder="Liczba osób, dodatkowe pytania..."></textarea>
+        <button type="button" onclick="alert('To jest szkic strony - formularz nie wysyła wiadomości. W wersji finalnej zapytanie trafia na adres hotel@hotelbialy.pl.')">Wyślij zapytanie</button>
+        <p class="info">Szkic - formularz nieaktywny. W wersji finalnej wysyłany szyfrowanym połączeniem (https) na adres hotelu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="siatka">
+      <div>
+        <b>Hotel i Restauracja Biały</b>
+        ul. Piotra Wysockiego 45<br>58-304 Wałbrzych<br>
+        <a href="tel:+48748441805">74 844 18 05</a> · <a href="mailto:hotel@hotelbialy.pl">hotel@hotelbialy.pl</a>
+      </div>
+      <div>
+        <b>Oferta</b>
+        <a href="#pokoje">Pokoje</a><br><a href="#restauracja">Restauracja</a><br><a href="#konferencje">Konferencje</a><br><a href="#wesela">Wesela</a>
+      </div>
+      <div>
+        <b>Informacje</b>
+        <a href="#galeria">Galeria</a><br><a href="#kontakt">Kontakt</a><br><a href="#hotel">O hotelu</a>
+      </div>
+    </div>
+    <div class="stopka-dol">
+      Szkic nowej strony przygotowany przez inż. Łukasza Stasiaka · 22.09.2026 · wersja demonstracyjna, nie jest oficjalną stroną hotelu
+    </div>
+  </div>
+</footer>
+
+<div class="mobbar">
+  <a class="l" href="tel:+48748441805">Zadzwoń</a>
+  <a class="r" href="#kontakt">Rezerwacja</a>
+</div>
+
+</body>
+</html>
