@@ -155,10 +155,12 @@ footer a:hover{color:#fff}
 .stopka-dol{border-top:1px solid rgba(255,255,255,.1);margin-top:32px;padding-top:20px;font-size:.82rem;color:#8b939e}
 
 /* pasek mobilny */
-.mobbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr;box-shadow:0 -4px 18px rgba(0,0,0,.2)}
-.mobbar a{padding:15px 8px;text-align:center;font-weight:700;text-decoration:none;font-size:.95rem}
-.mobbar a.l{background:#191d23!important;color:#ffffff!important}
-.mobbar a.r{background:#f7f4ed!important;color:#191d23!important;border-left:1px solid rgba(0,0,0,.15)}
+.mobbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr;
+  box-shadow:0 -6px 22px rgba(0,0,0,.35);border-top:1px solid rgba(255,255,255,.22)}
+.mobbar a{padding:16px 8px;text-align:center;font-weight:700;text-decoration:none;font-size:.97rem;letter-spacing:.01em}
+/* lewy: zloty - odcina sie od ciemnej stopki; prawy: bialy - odcina sie od zlotego */
+.mobbar a.l{background:#b3894f!important;color:#ffffff!important}
+.mobbar a.r{background:#ffffff!important;color:#191d23!important;border-left:1px solid rgba(0,0,0,.18)}
 @media(max-width:860px){.mobbar{display:grid}footer{padding-bottom:92px}}
 </style>
 </head>
